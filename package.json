@@ -1,0 +1,43 @@
+{
+  "name": "photopea-electron",
+  "version": "1.0.0",
+  "description": "Electron App Wrapper for Photopea Image Editing Web App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Andy Freidenfelds <andy.freidenfelds@grainger.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.0.5",
+    "electron-builder": "^20.38.5",
+    "pako": "^1.0.8"
+  },
+  "homepage": "https://github.com/afreidz/photopea-electron",
+  "build": {
+    "appId": "com.afreidz.photopea",
+    "productName": "Photopea",
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": ["dmg"],
+      "artifactName": "${productName}-${version}-${os}.${ext}"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": ["nsis"],
+      "artifactName": "${productName}-${version}-${os}.${ext}"
+    },
+    "linux": {
+      "target": ["deb"],
+      "artifactName": "${productName}-${version}-${os}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "installerIcon": "build/photopea.ico",
+      "runAfterFinish": true
+    }
+  }
+}
+
+
