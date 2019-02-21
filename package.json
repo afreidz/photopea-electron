@@ -4,7 +4,9 @@
   "description": "Electron App Wrapper for Photopea Image Editing Web App",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "npx electron-builder -mwl",
+    "release": "npx electron-builder -mwl --publish always"
   },
   "author": "Andy Freidenfelds <andy.freidenfelds@grainger.com>",
   "license": "ISC",
@@ -36,7 +38,8 @@
       "perMachine": true,
       "installerIcon": "build/photopea.ico",
       "runAfterFinish": true
-    }
+    },
+    "publish": "github"
   }
 }
 
